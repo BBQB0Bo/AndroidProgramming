@@ -15,13 +15,15 @@ public class DisplayMessage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display_message);
 
+        getSupportActionBar().setTitle("Display Settings");
+
         Intent intent = getIntent();
         String message = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
 
         TextView textView = findViewById(R.id.textview2);
 
         textView.setTypeface(null, Typeface.BOLD_ITALIC);
-        textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP,15);
+        textView.setTextSize(TypedValue.COMPLEX_UNIT_DIP,17);
 
         textView.setText(message);
     }

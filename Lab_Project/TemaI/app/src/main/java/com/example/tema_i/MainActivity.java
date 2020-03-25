@@ -5,8 +5,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.provider.MediaStore;
 import android.util.Log;
 import android.view.Menu;
@@ -150,8 +152,14 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Register Selected", Toast.LENGTH_LONG).show();
                 return true;
             case R.id.item3:
-                Toast.makeText(this, "Sent Message Selected", Toast.LENGTH_LONG).show();
-                sendMessage("Sent Message Selected");
+                Toast.makeText(this, "Show Settings Selected", Toast.LENGTH_LONG).show();
+                SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(this);
+                StringBuilder info = new StringBuilder();
+
+                info.append("Settings for this application are: ");
+                info.append("\nTelephone Number: " + prefs.getString("phoneNumber",""));
+                info.append("\nEmail address: " + prefs.getString("email",""));
+                sendMessage(info.toString());
                 return true;
             case R.id.item4:
                 Intent intent = new Intent(Intent.ACTION_SEND);
@@ -161,14 +169,39 @@ public class MainActivity extends AppCompatActivity {
                 if (intent.resolveActivity(getPackageManager()) != null) {
                     startActivity(intent);
                 }
+                return true;
+            case R.id.item5:
+                Toast.makeText(this, "Settings Selected", Toast.LENGTH_LONG).show();
+                startPreferenceActivity();
+                return true;
+            case R.id.item6:
+                Toast.makeText(this, "Storage Selected", Toast.LENGTH_LONG).show();
+                startStorageActivity();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
 
+    /*Functie prin care pornim activitatea Display Message si salvam un mesaj in Intent ca sa il afisam la
+    pornirea acesteia
+     */
+
     public void sendMessage(String message) {
         Intent intent = new Intent(this, DisplayMessage.class);
         intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
+
+    /*Functie prin care pornim activtatea pentru setarile aplicatiei*/
+    public void startPreferenceActivity(){
+        Intent intent = new Intent(this, MyPreferenceActivity.class);
+        startActivity(intent);
+    }
+
+    /*Functie prin care pornin activitatea pentru storage*/
+    public void startStorageActivity(){
+        Intent intent = new Intent(this, StorageActivity.class);
         startActivity(intent);
     }
 

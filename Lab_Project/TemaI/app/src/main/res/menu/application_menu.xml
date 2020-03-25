@@ -11,11 +11,19 @@
         app:showAsAction="never"/>
 
     <item android:id="@+id/item3"
-        android:title="Sent Message"
+        android:title="Show Settings"
         app:showAsAction="never"/>
 
     <item android:id="@+id/item4"
-        android:title="Email"
+    android:title="Email"
+    app:showAsAction="never"/>
+
+    <item android:id="@+id/item5"
+        android:title="Settings"
         app:showAsAction="never"/>
+    <item android:id="@+id/item6"
+        android:title="Storage"
+        app:showAsAction="never"/>
+
 
 </menu>

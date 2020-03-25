@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Password">
+        <EditTextPreference
+            android:name="Your Password"
+            android:key="password"
+            android:summary="For loggin in application"
+            android:title="Password" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Intruder Notification">
+        <EditTextPreference
+            android:name="Your Email"
+            android:key="email"
+            android:summary="An email address for us to notify"
+            android:title="email" />
+        <EditTextPreference
+            android:name="Your Phone Number"
+            android:key="phoneNumber"
+            android:summary="A phone number for us to notify"
+            android:title="phoneNumber" />
+    </PreferenceCategory>
+</PreferenceScreen>

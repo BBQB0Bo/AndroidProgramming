@@ -9,22 +9,26 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".StorageActivity"
+            android:parentActivityName=".MainActivity"/>
+        <activity
+            android:name=".MyPreferenceActivity"
+            android:parentActivityName=".MainActivity" />
         <activity
             android:name=".DisplayMessage"
             android:parentActivityName=".MainActivity" />
-
-
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
             <intent-filter>
-                <action android:name="android.intent.action.SEND"/>
+                <action android:name="android.intent.action.SEND" />
+
                 <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="*/*"/>
+
+                <data android:mimeType="*/*" />
             </intent-filter>
         </activity>
     </application>

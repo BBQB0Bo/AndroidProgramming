@@ -5,5 +5,8 @@
     <string name="textview2">Message</string>
     <string name="button2">+</string>
     <string name="textview3">Descriere</string>
+    <string name="butonPref">Show Settings</string>
+    <string name="buton_save">Save Internal Storage</string>
+    <string name="buton_load">Load Text Internal Storage</string>
 
 </resources>
