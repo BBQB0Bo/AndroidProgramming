@@ -8,5 +8,7 @@
     <string name="butonPref">Show Settings</string>
     <string name="buton_save">Save Internal Storage</string>
     <string name="buton_load">Load Text Internal Storage</string>
+    <string name="textView">Sensors Informations</string>
+    <string name="buttonC">Show Coordinates</string>
 
 </resources>

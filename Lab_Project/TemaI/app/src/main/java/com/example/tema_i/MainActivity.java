@@ -178,6 +178,14 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(this, "Storage Selected", Toast.LENGTH_LONG).show();
                 startStorageActivity();
                 return true;
+            case R.id.item7:
+                Toast.makeText(this, "Sensors selected", Toast.LENGTH_LONG).show();
+                startSensorsActivity();
+                return true;
+            case R.id.item8:
+                Toast.makeText(this, "Coordinates selected", Toast.LENGTH_LONG).show();
+                startCoordinatesActivity();
+                return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -199,9 +207,21 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    /*Functie prin care pornin activitatea pentru storage*/
+    /*Functie prin care pornim activitatea pentru storage*/
     public void startStorageActivity(){
         Intent intent = new Intent(this, StorageActivity.class);
+        startActivity(intent);
+    }
+
+    /*Functie prin care pornim activitatea pentr a afisa informatiile despre senzori*/
+    public void startSensorsActivity(){
+        Intent intent = new Intent(this,SensorsActivity.class);
+        startActivity(intent);
+    }
+
+    /*Functie prin care pornim activitatea pentru a afisa coordonatele*/
+    public void startCoordinatesActivity(){
+        Intent intent = new Intent(this,CoordinatesActivity.class);
         startActivity(intent);
     }
 
